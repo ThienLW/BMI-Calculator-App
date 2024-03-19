@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BMIActivity"
+    android:background="@drawable/gradient_background">
+
+    <TextView
+        android:id="@+id/tvBMICalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculator"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="-600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/metricSpinner"
+        app:layout_constraintTop_toBottomOf="@id/tvBMICalc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        >
+
+    </Spinner>
+
+    <com.google.android.material.card.MaterialCardView
+        app:layout_constraintTop_toBottomOf="@id/metricSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#DFDEDE"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="70sp"
+                app:cardCornerRadius="10sp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:padding="15sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age:">
+                    </TextView>
+                    <EditText
+                        android:id="@+id/etAge"
+                        android:layout_width="40sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp">
+                    </EditText>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gender:">
+                    </TextView>
+                    <Spinner
+                        android:id="@+id/genderSpinner"
+                        android:layout_width="200sp"
+                        android:layout_height="wrap_content"
+                        >
+
+                    </Spinner>
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="140sp"
+                app:cardCornerRadius="10sp"
+                android:layout_marginTop="20sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="15sp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weight:">
+                        </TextView>
+                        <EditText
+                            android:id="@+id/etWeight"
+                            android:layout_width="70sp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="20sp">
+                        </EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Height:">
+                        </TextView>
+                        <EditText
+                            android:id="@+id/etHeight"
+                            android:layout_width="70sp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="20sp">
+                        </EditText>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp">
+
+                <Button
+                    android:id="@+id/btnCalc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CALCULATE BMI"
+                    android:layout_weight="2"
+                    android:layout_marginEnd="7sp">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RESET"
+                    android:backgroundTint="@color/teal_700">
+
+                </Button>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="5sp">
+
+                    <TextView
+                        android:id="@+id/tvAppear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RESULT"
+                        android:textSize="25sp"
+                        android:textColor="@color/teal_200"
+                        android:textStyle="bold"
+                        android:layout_gravity="center">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvInfor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unknown User Information"
+                        android:layout_gravity="center">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvBMIRange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unknown BMI Range"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="#F60303"
+                        android:layout_gravity="center"
+                        android:layout_margin="10sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tvCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unkown Category"
+                        android:layout_gravity="center">
+
+                    </TextView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp">
+
+            </Button>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
